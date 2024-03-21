@@ -18,7 +18,3 @@ basic application
 		5.2 verification 
 	6. Video call, audio call, chatting functionality 
 	7. Admin page
-
-
-commands: 
-npm install tailwindcss-animate
