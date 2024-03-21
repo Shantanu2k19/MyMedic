@@ -1,7 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
 
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+input {
+  @apply w-[400px] border-gray-600 py-2 px-6 bg-zinc-100/50;
+}
 @layer components {
   /* main */
   .main-container {
@@ -144,7 +148,7 @@
 }
 
 .account-form_image-input {
-  @apply cursor-pointer border-none bg-transparent outline-none file:text-blue !important;
+  @apply cursor-pointer border-none bg-transparent outline-none file:text-blue-1 !important;
 }
 
 .account-form_input {
