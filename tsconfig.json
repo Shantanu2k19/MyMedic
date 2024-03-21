@@ -21,12 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "app/(pdp)/register/page.jsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx",".next/types/**/*.ts", "app/(pdp)/layout.js", "app/(pdp)/page.jsx"],
   "exclude": ["node_modules"]
 }
