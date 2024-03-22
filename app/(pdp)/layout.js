@@ -11,13 +11,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  console.log("layout")
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

@@ -13,17 +13,8 @@ export default function RegisterForm() {
 
   const router = useRouter();
 
-  //console.log(name+","+email);
-  console.log("<RegisterForm>");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!name || !email || !password) {
-      console.log("fileds empty");
-      setError("all fields are required!");
-      return;
-    }
 
     try {
       const resUserExist = await fetch("api/userExists", {
@@ -85,7 +76,7 @@ export default function RegisterForm() {
 
   return (
     <div className="grid place-items-center h-screen">
-      <div className="shadow-lg p-5 rounded-lg border-t-4 border-blue-500">
+      <div className="shadow-lg p-5 rounded-lg border-t-4 border-blue-500 flex flex-col gap-3">
         <h1 className="text-xl font-bold my-4">Register</h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -108,8 +99,14 @@ export default function RegisterForm() {
           />
 
           <button
-            className="bg-blue-700 text-white 
+            disabled={!password || !email || !name}
+            className={`bg-blue-700 text-white 
                 font-bold cursor-pointer px-6 py-2 rounded-md"
+                ${
+                  !password || !email || !name
+                    ? "opacity-50 cursor-not-allowed px-6 py-2 rounded-md"
+                    : ""
+                }`}
           >
             Register
           </button>
@@ -122,19 +119,17 @@ export default function RegisterForm() {
               {error}
             </div>
           )}
-
-          <button
-            onClick={() => signIn("google")}
-            className="bg-blue-700 text-white 
-                font-bold cursor-pointer px-6 py-2 rounded-md"
-          >
-            Login with google
-          </button>
-
-          <Link className="text-sm mt-3 text-right" href={"/"}>
-            Already have an account? <span className="underline">login</span>
-          </Link>
         </form>
+        <button
+          className="bg-blue-700 text-white 
+                font-bold cursor-pointer px-6 py-2 rounded-md"
+          onClick={() => signIn("google")}
+        >
+          Login with google
+        </button>
+        <Link className="text-sm text-right" href={"/"}>
+          Already have an account? <span className="underline">Login</span>
+        </Link>
       </div>
     </div>
   );
