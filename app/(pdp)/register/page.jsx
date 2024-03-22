@@ -6,8 +6,6 @@ import React from "react";
 
 export default async function Register() {
   const session = await getServerSession(authOptions);
-  console.log("[Register]");
-
   if (session) redirect("/home");
 
   return (
