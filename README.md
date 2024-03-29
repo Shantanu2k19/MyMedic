@@ -22,3 +22,11 @@ basic application
 
 commands: 
 npm install tailwindcss-animate
+
+
+tasks : 
+-fail message on register/login fail 
+- not redirecting after registering account 
+- logout not working 
+- email and password check before register, zod validation
+- server side and client side user authentication
