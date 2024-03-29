@@ -48,7 +48,6 @@ export default function RegisterForm() {
         const form = e.target;
         console.log("created user success!!");
         form.reset();
-        //router.push("/")
 
         try {
           const res = await signIn("credentials", {
@@ -62,7 +61,7 @@ export default function RegisterForm() {
             return;
           }
 
-          // router.replace("dashboard");
+          router.replace("home");
         } catch (error) {
           console.log("error loging in :" + error);
         }

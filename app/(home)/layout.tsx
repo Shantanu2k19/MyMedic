@@ -8,7 +8,7 @@ import LeftSidebar from '@/components/shared/Lefisidebar'
 import Rightsidebar from '@/components/shared/Rightsidebar'
 import Topbar from '@/components/shared/Topbar'
 import Bottombar from '@/components/shared/Bottombar'
-
+import { AuthProvider } from "../_app";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +25,7 @@ export default function RootLayout ({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <AuthProvider>
         <Topbar />
           <main className="flex flex-row">
             <LeftSidebar />
@@ -39,6 +40,7 @@ export default function RootLayout ({
           </main>
         {children}
         <Bottombar />
+        </AuthProvider>
       </body>
     </html>
   )

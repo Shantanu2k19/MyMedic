@@ -5,12 +5,16 @@ import { sidebarLinks } from '@/constants'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
-
+import { signOut } from "next-auth/react"
 
 function LeftSidebar () {
   const router = useRouter()
   const pathname = usePathname()
-
+  
+  const HandleLogout = () => {
+    console.log('logging out');
+    signOut({ callbackUrl: '/' });
+  } 
   return (
     <section className="custom-scrollbar leftsidebar">
         <div className="flex w-full flex-1
@@ -42,7 +46,9 @@ function LeftSidebar () {
             })}
         </div>
 
-        <div className="mt-10 px-6">
+        <div className="mt-10 px-6"
+          onClick={() => HandleLogout()}
+        >
           <div className="flex cursor-pointer gap-4 p-4">
               <Image src="/assets/logout.svg"
               alt="logout"
