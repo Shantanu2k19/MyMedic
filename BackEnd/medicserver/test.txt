@@ -1,0 +1,11 @@
+    ChatCompletion
+(id='chatcmpl-9AZdmFB7IrDrbqZrnAh8cw97rkdi4', 
+ choices=[
+     Choice(finish_reason='length', 
+            index=0, 
+            logprobs=None, 
+            message=ChatCompletionMessage(content='Medicine details:\n\nPatient Name: Mr. Shantanu\nAge: 21 years 3 months\nSex: Male\nDoctor Name: Dr. Rahul Arora\nSpeciality: Dermatology\nAllergy: No known allergies\n\nProvisional Diagnosis: Acne\n\nMedicine Advised:\n- ISOTROIN 20 MG tablet - 1 tablet per day after a meal\n- Bede Gel - apply once daily at night time, wash after 4 hours\n- SelyZap spray - apply twice daily\n- Clindac A lotion - apply once daily at night time\n- Acne UV gel SPF 30\n- FASHX FACEWASH\n- AD shampoo alternative days\n- IDERM lotion once daily\n\nReview after 14 days\n\nHospital Details:\nMax Healthcare Institute Limited\nRegd Office: 401, 4th Floor Man Excellenza, S V Road, Vile Parle West, Mumbai, Maharashtra - 400 056\nMax Super Speciality Hospital Shalimar Bagh\nAddress: C and D Block, Shalimar Bagh, New Delhi - 110 088\n\nFor medical service queries or appointments, call: +91 116642 2222 / +91 7194', role='assistant', function_call=None, tool_calls=None))], created=1712307310, 
+     model='gpt-3.5-turbo-0125', 
+     object='chat.completion', 
+     system_fingerprint='fp_b28b39ffa8', 
+     usage=CompletionUsage(completion_tokens=256, prompt_tokens=403, total_tokens=659))

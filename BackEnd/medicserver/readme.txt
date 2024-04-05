@@ -5,6 +5,12 @@ python manage.py startapp backend
 
 packages installed -
 pip install django 
+pip install pytesseract
+pip install openai
+pip install python-dotenv
+pip install requests
+pip install opencv-python
+
 
 
 django commands -
