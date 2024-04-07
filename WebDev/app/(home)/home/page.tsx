@@ -25,10 +25,14 @@ export default function Hello() {
       },
     })
       .then((res) => {
-        const setCookieHeader = res?.headers?.get("Set-Cookie");
-        const csrfToken = setCookieHeader?.split("=")[1].split(";")[0];
-        console.log("hello props", setCookieHeader);
-
+        if (!res.ok) {
+          throw new Error(`status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        const csrfToken = data.csrf_token;
+        console.log("hello props", csrfToken);
         setToken(csrfToken);
       })
       .catch((err) => console.error("error:" + err));
@@ -47,7 +51,8 @@ export default function Hello() {
       method: "POST",
       headers: {
         "User-Agent": "insomnia/8.6.1",
-        "X-CSRFToken": token,
+        "X-CSRFToken":
+          "KJPq55ap9uyXUEhHgYSuzgaz1k4DkzjmRfgB7nXwFYYODSRamWRQ7e5aoDsCsFhG",
         Referer: "https://mymedic.pythonanywhere.com/getinfo",
       },
       body: formData,
