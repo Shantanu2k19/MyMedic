@@ -52,7 +52,7 @@ export default function Hello() {
       headers: {
         "User-Agent": "insomnia/8.6.1",
         "X-CSRFToken":
-          "KJPq55ap9uyXUEhHgYSuzgaz1k4DkzjmRfgB7nXwFYYODSRamWRQ7e5aoDsCsFhG",
+          "PDHLKFop9ABrzSuvr6B77CLtktTFbnELSSwKQy5nCJ0UVyF3X0OYO9IyJytfIxoL",
         Referer: "https://mymedic.pythonanywhere.com/getinfo",
       },
       body: formData,
