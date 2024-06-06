@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import axios from 'axios';
