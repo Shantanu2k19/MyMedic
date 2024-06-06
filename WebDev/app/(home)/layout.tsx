@@ -13,8 +13,8 @@ import { AuthProvider } from "../_app";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Threads',
-  description: 'A next js 13 threads clone for learning mern'
+  title: 'MyMedic',
+  description: 'An application to facilitate medication knowledge and awareness'
 }
 
 export default function RootLayout ({
@@ -36,7 +36,7 @@ export default function RootLayout ({
               </div>
             </section>
 
-            <Rightsidebar />
+            {/* <Rightsidebar /> */}
           </main>
         <Bottombar />
         </AuthProvider>
