@@ -4,16 +4,27 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 
 export default function hello(){
-    //const { data: session } = useSession();
-    //console.log(session?.user?.name)
+    const { data: session } = useSession();
+    // console.log("user name")
+    // console.log(session?.user?.name)
+    // console.log("user email")
+    // console.log(session?.user?.email)
+
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [uploadStatus, setUploadStatus] = useState<string>('');
     const [csrfToken, setCsrfToken] = useState<string>('');
   
     useEffect(() => {
       const fetchCsrfToken = async () => {
+        console.log("fetching csrf token");
         try {
-          const response = await axios.get('http://localhost:8000/csrf/');
+          const response = await axios.get('http://localhost:8000/csrf/',{
+            withCredentials: true,
+            params: {
+              username: 'your_username_here',
+            },
+          });
+          console.log("got token");
           setCsrfToken(response.data.csrfToken);
         } catch (error) {
           console.error('Error fetching CSRF token:', error);
@@ -44,13 +55,24 @@ export default function hello(){
           headers: {
             'Content-Type': 'multipart/form-data',
             'X-CSRFToken': csrfToken,
+            'X-APIKEY': 'api_key',
+            'X-username': 'user123'
           },
           withCredentials: true,
         });
+        console.log('Response:', response.data);
         setUploadStatus('File uploaded successfully!');
-      } catch (error) {
+      } catch (error: any) {
+        if (error.response) {
+          console.error('Error response data:', error.response.data);
+          console.error('Error response status:', error.response.status);
+          console.error('Error response headers:', error.response.headers);
+        } else if (error.request) {
+          console.error('Error request data:', error.request);
+        } 
+        console.error('Error message:', error.message);
+        
         setUploadStatus('Error uploading file.');
-        console.error(error);
       }
     };
   

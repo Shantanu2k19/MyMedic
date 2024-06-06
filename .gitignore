@@ -39,4 +39,5 @@ next-env.d.ts
 #shan local temp files 
 /shan
 
-settings.py
+/BackEnd/photos
+

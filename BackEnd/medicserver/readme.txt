@@ -24,6 +24,8 @@ for logs :
     logging.warning("This is a warning message")
     logging.error("This is an error message")
     logging.critical("This is a critical message")
+    lol= "123456789"
+    logging.error('%s normal. Relax! %s',lol,42)
 
 
 extra 
