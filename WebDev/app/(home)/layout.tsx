@@ -38,7 +38,6 @@ export default function RootLayout ({
 
             <Rightsidebar />
           </main>
-        {children}
         <Bottombar />
         </AuthProvider>
       </body>

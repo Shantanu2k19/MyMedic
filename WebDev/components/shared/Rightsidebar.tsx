@@ -8,13 +8,13 @@ function Rightsidebar () {
   const { data: session } = useSession();
   const router = useRouter();
 
-  if(session){
-    console.log("user valid")
-  }
-  else{
-    router.replace("/");
-    //causes jitter
-  }
+  // if(session){
+  //   console.log("user valid")
+  // }
+  // else{
+  //   router.replace("/");
+  //   //causes jitter
+  // }
   return (
         <section className="custom-scrollbar rightsidebar">
             <div className="flex flex-1 flex-col justify-start">
