@@ -40,11 +40,22 @@ def upload_image(request):
         if not username:
             return JsonResponse({'error': 'Username not found'}, status=401)
 
+        print("request from "+username)
+        
         file = request.FILES['file']
-        metadata = processFile(file, username)
+        ret = {
+            "status": 200,
+            "mssg": "success",
+            "data": {},
+            "file_url": ""
+        }
+        processFile(file, username, ret)
+
+        if(ret.status!=200):
+            return JsonResponse({'error': ret.message}, status=ret.status)
 
         logging.info('user [%s]',username)
-        return JsonResponse({'message': 'File uploaded successfully', 'metadata': metadata})
+        return JsonResponse({'message': 'File uploaded successfully', 'ret': ret})
     return JsonResponse({'message': 'No file found'}, status=400)
 
 #index view
@@ -58,3 +69,10 @@ def index(request):
 # logging.warning("This is a warning message")
 # logging.error("This is an error message")
 # logging.critical("This is a critical message")
+
+#custom error handling [TODO: is there better approach?]
+# ret = {
+#     "status": 200,
+#     "mssg": "success",
+#     "data": {}
+# }
