@@ -37,3 +37,6 @@ tasks :
 
 BACKEND
 - logs adding and config  
+- apply notebook code to backend
+- box wise info from chatgpt
+- testing above 
