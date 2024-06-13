@@ -15,18 +15,22 @@ def processFile(file, username, ret):
     fname, file_extension = os.path.splitext(file.name)
     fileName = username[0:5]+"_"+file.name[0:5]+"_"+str(file_uuid)+file_extension
     
-    metadata={}
-    text = ""
+    # ret_data = {
+    #     "new_image": img, 
+    #     "image_data": image_data,
+    #     "image_text": text_data
+    # }
+
     #extension handling 
     if(
         file_extension.lower()=='.png' or 
         file_extension.lower()=='.jpg' or 
         file_extension!='.jpeg'
         ):
-        extractImageTextData(file, text, ret)
+        image_data = extractImageTextData(file, ret)
     
     elif file_extension.lower()=='.pdf':
-        extractPdfTextData(file, text, ret)
+        image_data = extractPdfTextData(file, text, ret)
 
     else:
         ret["status"] = 401
@@ -35,8 +39,10 @@ def processFile(file, username, ret):
     
     if(ret["status"]!=200):
         return
-
-    getMedicineInfo(text, ret)
+    
+    file = image_data["new_image"]
+    
+    getMedicineInfo(image_data["text_data"], ret)
     if(ret["status"]!=200):
         return
     

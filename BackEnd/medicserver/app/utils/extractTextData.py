@@ -5,7 +5,7 @@ import re
 from PIL import Image
 from pytesseract import Output
 
-def extractImageTextData(file, text, ret):
+def extractImageTextData(file, ret):
 
     with tempfile.NamedTemporaryFile(delete=False) as temp_file:
         for chunk in file.chunks():
@@ -16,17 +16,11 @@ def extractImageTextData(file, text, ret):
     img = processImage(temp_file_path)
     temp_file.close()
 
-    #extract text 
-    text = extractTextAndDraw(img, text)
-    pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
-    text = pytesseract.image_to_string(img, lang='eng')
+    #extract text and draw 
+    image_data = extractTextAndDraw(img)
+    return image_data
 
-    #clean text 
-    text = processText(text)
-
-    return
-
-def extractTextAndDraw(img, text):
+def extractTextAndDraw(img):
     data = pytesseract.image_to_data(img, output_type=Output.DICT)
 
     # Create a dictionary to store blocks
@@ -57,30 +51,65 @@ def extractTextAndDraw(img, text):
     img_with_blocks = img.copy()
 
     # Draw a rectangle around each block and print text
+    new_block_num = 1
+    image_data = {}
     for block_num, block_data in blocks.items():
         left, top, width, height = block_data['left'], block_data['top'], block_data['width'], block_data['height']
-        cv2.rectangle(img_with_blocks, (left, top), (left + width, top + height), (0, 255, 0), 10)
-        cv2.putText(img_with_blocks, str(block_num), (left, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36, 255, 12), 7)
-        print(f"Block {block_num} Text: {block_data['text']}")
+        
+        #draw rectangle 
+        cv2.rectangle(img_with_blocks, (left, top), (left + width, top + height), (255, 0, 0), 4) #BGR
 
-    # Convert BGR to RGB for displaying with matplotlib
-    img_rgb = cv2.cvtColor(img_with_blocks, cv2.COLOR_BGR2RGB)
+        #draw circle 
+        if(new_block_num<10):
+            circLeft = left+20
+            radius = 40
+        else:
+            circLeft = left+40
+            radius = 50
+        cv2.circle(img_with_blocks, (circLeft, top - 35), radius, (255, 255, 255), -1)  # -1 fills the circle
 
-    # Display the image with bounding boxes around blocks
-    plt.figure(figsize=(10, 10))
-    plt.imshow(img_rgb)
-    plt.title("Image with OCR Bounding Boxes Around Blocks")
-    plt.axis('off')
-    plt.show()
+        #text 
+        cv2.putText(img_with_blocks, str(new_block_num), (left, top - 12), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 215), 4)
+        # print(f"Block {new_block_num} Text: {block_data['text']}")
+        image_data[str(new_block_num)]= block_data['text']
+        text_data += " "+block_data['text']
+        new_block_num+=1
 
-    cv2.imwrite('output_image.png', img_rgb, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+    #save image 
+    max_width, max_height = 1920, 1080
+    height, width = img_with_blocks.shape[:2]
 
-    new_img2 = cv2.cvtColor(new_img, cv2.COLOR_BGR2RGB)
-    plt.figure(figsize=(10, 10))
-    plt.imshow(new_img2)
-    plt.title("Image with OCR Blwmds")
-    plt.axis('off')
-    plt.show()
+    if width > max_width or height > max_height:
+        # Calculate the scaling factor
+        scaling_factor = min(max_width / width, max_height / height)
+        new_width = int(width * scaling_factor)
+        new_height = int(height * scaling_factor)
+        
+        # Resize the image
+        resized_image = cv2.resize(img_with_blocks, (new_width, new_height), interpolation=cv2.INTER_AREA)
+    else:
+        # If the image does not need resizing, keep it as it is
+        resized_image = img_with_blocks
+
+    # Convert BGR to RGB 
+    img = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+    #cv2.imwrite('output_image.png', img, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+    #cv2.imwrite('output_image.jpg', img, [cv2.IMWRITE_JPEG_QUALITY, 100])
+
+    for key, value in image_data.items():
+        print(f"Key: {key}, Value: {value}")
+
+    print()
+
+    ret_data = {
+        "new_image": img, 
+        "image_data": image_data,
+        "image_text": text_data
+    }
+    return ret_data
+    
+
 
 def clean_text(text):
     # Remove special characters
