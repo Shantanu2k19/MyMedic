@@ -40,3 +40,6 @@ BACKEND
 - apply notebook code to backend
 - box wise info from chatgpt
 - testing above 
+
+- sending text to llm chunks vs bulk, compare 
+- processing and displaying text on ui 
