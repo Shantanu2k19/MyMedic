@@ -37,3 +37,5 @@ git rm -r --cached <folder>
 #remove the file from server, keep in local, stop tracking
 
 
+ctrl+shift+p
+terminus: open 

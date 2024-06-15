@@ -59,5 +59,7 @@ def useChatGpt(text, ret, model):
 
 
 def useGemini(text, ret, model):
+    '''
+    gemni
+    '''
     return
-
