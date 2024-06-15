@@ -30,7 +30,7 @@ def processFile(file, username, ret):
         image_data = extractImageTextData(file, ret)
     
     elif file_extension.lower()=='.pdf':
-        image_data = extractPdfTextData(file, text, ret)
+        image_data = extractPdfTextData(file, ret)
 
     else:
         ret["status"] = 401
@@ -42,7 +42,8 @@ def processFile(file, username, ret):
     
     file = image_data["new_image"]
     
-    getMedicineInfo(image_data["text_data"], ret)
+    model = 0
+    getMedicineInfo(image_data["image_text"], ret, model)
     if(ret["status"]!=200):
         return
     

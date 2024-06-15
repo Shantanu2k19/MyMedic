@@ -130,7 +130,7 @@ def processImage(image_path):
     )
     return new_img
 
-def extractPdfTextData(file, text, ret):
+def extractPdfTextData(file, ret):
     ret["status"] = 401
     ret["mssg"] = "pdf files not supported yet"
     return 

@@ -3,9 +3,20 @@ from dotenv import load_dotenv
 
 import os
 
-def getMedicineInfo(text, ret):
+def getMedicineInfo(text, ret, model):
     # return json.dumps({"medicine":"lol"})
     
+    if model==0:
+        useChatGpt(text, ret)
+    elif model==1:
+        useGemini(text, ret)
+    else :
+        ret["status"] = 401
+        ret["mssg"] = "model not supported"
+        return
+
+def useChatGpt(text, ret, model):
+
     load_dotenv()
     client = OpenAI()
     api_key = os.getenv('OPENAI_API_KEY')
@@ -45,3 +56,8 @@ def getMedicineInfo(text, ret):
         ret["mssg"]=str(e)[0:200]
     
     return 
+
+
+def useGemini(text, ret, model):
+    return
+
