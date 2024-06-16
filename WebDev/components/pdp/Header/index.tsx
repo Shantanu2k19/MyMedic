@@ -55,8 +55,6 @@ const Header: React.FunctionComponent = () => {
         top="0"
         zIndex="10"
         minW="100%"
-        border="5px solid"
-        borderColor="green"
         px={{ base: 20, lg: 20, md: 20, sm: 0, xs: 0 }}
       >
         <Flex

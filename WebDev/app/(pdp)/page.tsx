@@ -11,6 +11,9 @@ import BaseSeo from "@/components/pdp/BaseSeo";
 import Header from "@/components/pdp/Header"
 import Hero from "@/components/pdp/Hero"
 import Footer from "@/components/pdp/Footer"
+import Loginsignup from "@/components/pdp/Loginsignup"
+import Moreinfo from "@/components/pdp/Moreinfo"
+
 
 const Home: NextPage = (props: any) => {
   
@@ -21,6 +24,8 @@ const Home: NextPage = (props: any) => {
       <main>
         <Header />
         <Hero {...props} />
+        <Loginsignup />
+        <Moreinfo />
       </main>
 
       <footer>

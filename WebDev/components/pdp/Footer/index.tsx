@@ -34,8 +34,6 @@ const Footer: React.FunctionComponent = () => {
     <React.Fragment>
       <Box  bgColor={useColorModeValue("gray.50", "gray.700")}
         // position="fixed"
-        border="5px solid"
-        borderColor="yellow"
       >
         <BaseBox
           bgColor={useColorModeValue("gray.50", "gray.700")}
