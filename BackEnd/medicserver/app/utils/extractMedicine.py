@@ -1,63 +1,27 @@
-from openai import OpenAI
-from dotenv import load_dotenv
+from django.conf import settings
 
-import os
+from app.llmModels.gemini import geminiModel 
+from app.llmModels.openai import opemnAImodel
 
-def getMedicineInfo(text, ret, model):
-    # return json.dumps({"medicine":"lol"})
-    
-    if model==0:
-        useChatGpt(text, ret)
-    elif model==1:
-        useGemini(text, ret)
+query = '''below is the text extracted from prescription of a patient. 
+From the given text, extract the medicines prescribed and list their name as 'name', what are they used for as 'use',dosage in prescription or recommended dosage as 'dosage',
+side effects as 'sideeffects', and the type also how it works and treats the disease it is for as 'working'.
+give general recommended information if it is not provided in text. 
+and finally give all the extra information you were able to retrieve from the text as 'extraInfo'. 
+provide it all in json format. text : '''
+
+model = settings.MODEL
+supported_models=settings.SUPPORTED_MODELS
+
+def getMedicineInfo(extracted_image_data, ret):
+    print("extracting medicine from model")
+
+    if model==supported_models.OPENAI:
+        opemnAImodel(extracted_image_data, ret, query)
+    elif model==supported_models.GEMINI:
+        print("geminiModel")
+        geminiModel(extracted_image_data, ret, query)
     else :
         ret["status"] = 401
         ret["mssg"] = "model not supported"
         return
-
-def useChatGpt(text, ret, model):
-
-    load_dotenv()
-    client = OpenAI()
-    api_key = os.getenv('OPENAI_API_KEY')
-
-    if api_key is None:
-        ret["status"]=401
-        ret["mssg"]="OpenAI API key not found in environment variables."
-        return
-
-    query = '''below is the text extracted from prescription of a patient. 
-    From the given text, extract the medicines prescribed and list their name,use, dosage. 
-    give recommended if information is not provided in text. 
-    and finally give all the extra information you were able to retrieve from the text. 
-    provide it all in json format. text : '''
-
-    try:
-        response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {
-            "role": "user",
-            "content": query + text + "'"
-            }
-        ],
-        temperature=1,
-        max_tokens=511,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0
-        )
-
-        json_data = response.choices[0].message.content
-        print(json_data)
-        ret["data"] = json_data
-    except Exception as e:
-        ret["status"]=400
-        ret["mssg"]=str(e)[0:200]
-    
-    return 
-
-
-def useGemini(text, ret, model):
-    return
-
