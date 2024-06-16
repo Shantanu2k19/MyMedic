@@ -40,21 +40,23 @@ def upload_image(request):
         if not username:
             return JsonResponse({'error': 'Username not found'}, status=401)
 
-        print("request from "+username)
+        print("request from :"+username)
         
-        file = request.FILES['file']
+        uploaded_image_file = request.FILES['file']
         ret = {
             "status": 200,
             "mssg": "success",
             "data": {},
             "file_url": ""
         }
-        processFile(file, username, ret)
 
-        if(ret.status!=200):
-            return JsonResponse({'error': ret.message}, status=ret.status)
+        processFile(uploaded_image_file, username, ret)
+        print("processing done")
 
-        logging.info('user [%s]',username)
+        if(ret["status"]!=200):
+            return JsonResponse({'error': ret["mssg"]}, status=ret["status"])
+
+        print("done")
         return JsonResponse({'message': 'File uploaded successfully', 'ret': ret})
     return JsonResponse({'message': 'No file found'}, status=400)
 

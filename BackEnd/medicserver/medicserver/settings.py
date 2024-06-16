@@ -16,7 +16,16 @@ from pathlib import Path
 #for logging 
 import os 
 from logging.handlers import RotatingFileHandler
+from enum import Enum
 
+#CONFIG PARAMETERS
+
+class SUPPORTED_MODELS(Enum):
+    OPENAI=1
+    GEMINI=2
+    CLAUDE=3
+
+MODEL=SUPPORTED_MODELS.GEMINI
 
 # LOGGING = {
 #     "version": 1,

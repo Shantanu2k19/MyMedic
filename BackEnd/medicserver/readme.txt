@@ -39,3 +39,13 @@ git rm -r --cached <folder>
 
 ctrl+shift+p
 terminus: open 
+
+
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service-account-file.json"
+
+setting up steps: 
+
+-> create a gcp service account, 
+    create a config json file, set envVariable for it with path of the file 
+
+    

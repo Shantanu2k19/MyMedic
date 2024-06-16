@@ -9,7 +9,10 @@ class UserDetails(models.Model):
 
 class FileDetails(models.Model):
     file_name = models.CharField(primary_key=True, default="default_name", editable=False, max_length=150)
-    metadata = models.JSONField()
+    json_image_data = models.JSONField(default=dict)
+    str_image_text = models.TextField(default='No Data Found!!')
+    data_from_llm = models.JSONField(default=dict)
+    file_url = models.CharField(max_length=150, default='noimagefound')
 
     def __str__(self):
         return str(self.file_name)
