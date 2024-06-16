@@ -20,3 +20,5 @@ app/migrations/*
 
 
 medic-fef073f39284.json
+
+/app/llmModels/__pycache__
