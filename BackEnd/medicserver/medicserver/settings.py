@@ -16,39 +16,48 @@ from pathlib import Path
 #for logging 
 import os 
 from logging.handlers import RotatingFileHandler
+from enum import Enum
 
+#CONFIG PARAMETERS
 
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "root": {"level": "INFO", "handlers": ["file"]},
-    "handlers": {
-        "file": {
-            "level": "INFO",
-            "class": "logging.handlers.RotatingFileHandler",
-            "filename": os.path.join(os.getcwd(), "logs", "django.log"),
-            "formatter": "app",
-            "maxBytes": 1024 * 1024,  # 1 MB
-            "backupCount": 5,  # Number of backup log files
-        },
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["file"],
-            "level": "INFO",
-            "propagate": True
-        },
-    },
-    "formatters": {
-        "app": {
-            "format": (
-                u"%(asctime)s [%(levelname)-5s] "
-                "(%(module)s.%(funcName)s) %(message)s"
-            ),
-            "datefmt": "%Y-%m-%d %H:%M:%S",
-        },
-    },
-}
+class SUPPORTED_MODELS(Enum):
+    OPENAI=1
+    GEMINI=2
+    CLAUDE=3
+
+MODEL=SUPPORTED_MODELS.GEMINI
+
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "root": {"level": "INFO", "handlers": ["file"]},
+#     "handlers": {
+#         "file": {
+#             "level": "INFO",
+#             "class": "logging.handlers.RotatingFileHandler",
+#             "filename": os.path.join(os.getcwd(), "logs", "django.log"),
+#             "formatter": "app",
+#             "maxBytes": 1024 * 1024,  # 1 MB
+#             "backupCount": 5,  # Number of backup log files
+#         },
+#     },
+#     "loggers": {
+#         "django": {
+#             "handlers": ["file"],
+#             "level": "INFO",
+#             "propagate": True
+#         },
+#     },
+#     "formatters": {
+#         "app": {
+#             "format": (
+#                 u"%(asctime)s [%(levelname)-5s] "
+#                 "(%(module)s.%(funcName)s) %(message)s"
+#             ),
+#             "datefmt": "%Y-%m-%d %H:%M:%S",
+#         },
+#     },
+# }
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

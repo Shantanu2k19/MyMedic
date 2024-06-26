@@ -17,3 +17,10 @@ app/__pycache__
 app/migrations/*
 
 /app/utils/__pycache__/
+
+
+medic-fef073f39284.json
+
+/app/llmModels/__pycache__
+
+mymedic_gcp.json
