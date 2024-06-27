@@ -33,3 +33,7 @@ tasks :
 - email and password check before register, zod validation
 - server side and client side user authentication
 - Homepage UI
+
+
+ - compress the jpg and remove unnecessary images
+ 

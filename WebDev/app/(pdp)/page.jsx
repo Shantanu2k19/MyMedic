@@ -30,9 +30,10 @@ export default function Home() {
       <Hero />
       <Features />
       <Brands />
+      <AboutSectionTwo /> {/*login section */}
+
       <Video />
       <AboutSectionOne />
-      <AboutSectionTwo />
       <Testimonials />
       <Pricing />
       <Blog />

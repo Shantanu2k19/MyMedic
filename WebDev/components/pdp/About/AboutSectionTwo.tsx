@@ -1,60 +1,58 @@
+"use client"
+
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { motion, AnimatePresence } from 'framer-motion';
+
+import LoginForm from "./loginSection"
+import SignupForm from "./signupSection"
+import "@/styles/bounce.css";
 
 const AboutSectionTwo = () => {
+  const [isSignin, toggleSignin] = useState(false);
+
+  const toggleComponent = () => {
+    toggleSignin(!isSignin);
+  };
+
   return (
     <section className="py-16 md:py-20 lg:py-28">
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap items-center">
-          <div className="w-full px-4 lg:w-1/2">
+      <div className="border border-red-300 container">
+        <div className="flex flex-wrap items-center justify-center">
+          
+          <div className="w-full px-4 lg:w-1/2 border border-green-300 px-20">
             <div
-              className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0"
+              className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] 
+              text-center lg:m-0 flex justify-center items-center"
               data-wow-delay=".15s"
             >
-              <Image
-                src="/images/about/about-image-2.svg"
-                alt="about image"
-                fill
-                className="drop-shadow-three dark:hidden dark:drop-shadow-none"
-              />
-              <Image
-                src="/images/about/about-image-2-dark.svg"
-                alt="about image"
-                fill
-                className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
-              />
+            <Image
+              src="/images/mainImg/grn3.jpg"
+              alt="about image"
+              width={100}
+              height={100}
+              className="image-container"
+            />
             </div>
           </div>
-          <div className="w-full px-4 lg:w-1/2">
-            <div className="max-w-[470px]">
-              <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Bug free code
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Premier support
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
-                </p>
-              </div>
-              <div className="mb-1">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Next.js
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt
-                  consectetur adipiscing elit setim.
-                </p>
-              </div>
+
+          <div className="flex items-center justify-center w-full px-4 lg:w-1/2 border border-red-300 my-10">
+
+            {/* <div className="absolute">
+                {isSignin ? <LoginForm toggleComponent={toggleComponent}/> : <SignupForm toggleComponent={toggleComponent}/>}
             </div>
+            <div className="absolute">
+                  {isSignin ? <SignupForm toggleComponent={toggleComponent}/> : <LoginForm toggleComponent={toggleComponent}/>}
+            </div> */}
+
+            {isSignin ? (
+                <LoginForm toggleComponent={toggleComponent}/> 
+            ) : (
+                <SignupForm toggleComponent={toggleComponent}/>
+            )}
           </div>
+          
         </div>
       </div>
     </section>
