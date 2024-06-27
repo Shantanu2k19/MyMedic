@@ -1,6 +1,6 @@
-import SingleBlog from "@/components/Blog/SingleBlog";
-import blogData from "@/components/Blog/blogData";
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import SingleBlog from "@/components/pdp/Blog/SingleBlog";
+import blogData from "@/components/pdp/Blog/blogData";
+import Breadcrumb from "@/components/pdp/Common/Breadcrumb";
 
 import { Metadata } from "next";
 
