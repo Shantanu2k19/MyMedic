@@ -6,11 +6,11 @@ const featuresData: Feature[] = [
     id: 1,
     icon: (
       <Image
-        src="/icons/ideas.svg"
+        src="/icons/ai3.png"
         alt="logout"
-        className="rounded-lg bg-white shadow-md bg-opacity-70"
-        width={45}
-        height={45}
+        //className="rounded-lg bg-primary shadow-md p-2"
+        width={50}
+        height={50}
       />
     ),
     title: "AI-Powered Prescription Analysis",
@@ -21,11 +21,11 @@ const featuresData: Feature[] = [
     id: 1,
     icon: (
       <Image
-        src="/icons/prescription2.svg"
+        src="/icons/pres1.png"
         alt="logout"
-        className="rounded-lg bg-white shadow-md bg-opacity-70"
-        width={45}
-        height={45}
+        //className="rounded-lg bg-primary shadow-md p-2"
+        width={50}
+        height={50}
       />
     ),
     title: "Comprehensive Medicine Information",
@@ -36,11 +36,11 @@ const featuresData: Feature[] = [
     id: 1,
     icon: (
       <Image
-        src="/icons/profile.svg"
+        src="/icons/history.png"
         alt="logout"
-        className="rounded-lg bg-white shadow-md bg-opacity-70"
-        width={45}
-        height={45}
+        //className="rounded-lg bg-primary shadow-md p-2"
+        width={50}
+        height={50}
       />
     ),
     title: "AI powered Medical History Management ",
@@ -51,11 +51,11 @@ const featuresData: Feature[] = [
     id: 1,
     icon: (
       <Image
-      src="/icons/cart.svg"
-      className="rounded-lg bg-white shadow-md bg-opacity-70"
+      src="/icons/shopping.png"
+      //className="rounded-lg bg-primary shadow-md p-2"
       alt="logout"
-      width={45}
-      height={45}
+      width={50}
+      height={50}
     />
     ),
     title: "Convenient Medicine Purchase",
@@ -66,11 +66,11 @@ const featuresData: Feature[] = [
     id: 1,
     icon: (
       <Image
-      src="/icons/phone.svg"
+      src="/icons/consult.png"
       alt="logout"
-      className="rounded-lg bg-white shadow-md bg-opacity-70"
-      width={45}
-      height={45}
+      //className="rounded-lg bg-primary shadow-md p-2"
+      width={50}
+      height={50}
     />
     ),
     title: "Online Consultancy",
@@ -81,11 +81,11 @@ const featuresData: Feature[] = [
     id: 1,
     icon: (
       <Image
-        src="/icons/prescription.svg"
+        src="/icons/article.png"
         alt="logout"
-        className="rounded-lg bg-white shadow-md bg-opacity-70 bg-opacity-70"
-        width={45}
-        height={45}
+        //className="rounded-lg bg-primary shadow-md p-2 bg-opacity-50"
+        width={50}
+        height={50}
       />
     ),
     title: "AI-Enhanced Health Articles",
