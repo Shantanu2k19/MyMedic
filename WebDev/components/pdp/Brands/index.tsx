@@ -9,7 +9,7 @@ const Brands = () => {
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div className="flex flex-wrap items-center justify-center rounded-sm bg-gray-light px-8 pt-8 dark:bg-gray-dark 
+            <div className="flex flex-wrap items-center justify-center rounded-sm bg-gray-light px-8 pt-14 dark:bg-gray-dark 
              font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[20px]">
               Powered By
             </div>
@@ -36,7 +36,7 @@ const SingleBrand = ({ brand }: { brand: Brand }) => {
         href={href}
         target="_blank"
         rel="nofollow noreferrer"
-        className="relative h-10 w-full opacity-70 transition hover:opacity-100 dark:opacity-60 dark:hover:opacity-100"
+        className="relative h-12 w-full transition opacity-60 hover:opacity-100 dark:opacity-60 dark:hover:opacity-100"
       >
         {/* <Image src={imageLight} alt={name} fill className="hidden dark:block" />
         <Image src={image} alt={name} fill className="block dark:hidden" /> */}
@@ -44,8 +44,8 @@ const SingleBrand = ({ brand }: { brand: Brand }) => {
           src={image} 
           alt={name} 
           fill 
-          className="bg-white rounded-lg opacity-30 p-2" 
-          style={{ filter: 'grayscale(100%)' }}
+          className="dark:bg-white dark:opacity-40 rounded-lg p-2" 
+          style={{ filter: 'grayscale(10%)' }}
         />
       </a>
     </div>
