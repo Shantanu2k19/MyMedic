@@ -8,7 +8,6 @@ const featuresData: Feature[] = [
       <Image
         src="/icons/ai3.png"
         alt="logout"
-        //className="rounded-lg bg-primary shadow-md p-2"
         width={50}
         height={50}
       />
@@ -23,7 +22,6 @@ const featuresData: Feature[] = [
       <Image
         src="/icons/pres1.png"
         alt="logout"
-        //className="rounded-lg bg-primary shadow-md p-2"
         width={50}
         height={50}
       />
@@ -38,7 +36,6 @@ const featuresData: Feature[] = [
       <Image
         src="/icons/history.png"
         alt="logout"
-        //className="rounded-lg bg-primary shadow-md p-2"
         width={50}
         height={50}
       />
@@ -52,7 +49,6 @@ const featuresData: Feature[] = [
     icon: (
       <Image
       src="/icons/shopping.png"
-      //className="rounded-lg bg-primary shadow-md p-2"
       alt="logout"
       width={50}
       height={50}
@@ -68,7 +64,6 @@ const featuresData: Feature[] = [
       <Image
       src="/icons/consult.png"
       alt="logout"
-      //className="rounded-lg bg-primary shadow-md p-2"
       width={50}
       height={50}
     />
@@ -83,7 +78,6 @@ const featuresData: Feature[] = [
       <Image
         src="/icons/article.png"
         alt="logout"
-        //className="rounded-lg bg-primary shadow-md p-2 bg-opacity-50"
         width={50}
         height={50}
       />
