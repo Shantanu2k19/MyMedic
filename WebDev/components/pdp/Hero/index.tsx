@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <>
       <section
-        id="home"
+        id="sectionHome"
         className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px] border border-red-300 rounded-lg p-4"
       >
        <div className="container border border-gray-300 rounded-lg p-4">
