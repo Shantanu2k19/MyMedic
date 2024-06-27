@@ -1,5 +1,5 @@
 import Breadcrumb from "@/components/pdp/Common/Breadcrumb";
-import Contact from "@/components/pdp/Contact";
+import Contact from "@/app/(extraPages)/Contact";
 
 import { Metadata } from "next";
 

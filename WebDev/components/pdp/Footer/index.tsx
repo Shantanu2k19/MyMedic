@@ -27,8 +27,8 @@ const Footer = () => {
                   />
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lobortis.
+                MyMedic is currently in beta. While we strive for accuracy, it is not a replacement for a pharmacist. 
+                Always use your own judgment before taking any sensitive medications and consult with a healthcare professional if you have any doubts or questions.
                 </p>
                 <div className="flex items-center">
                   <a
@@ -215,24 +215,16 @@ const Footer = () => {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
-              Template by{" "}
+              MyMedic is open source. &nbsp;
               <a
-                href="http://uideck.com"
+                href="https://github.com/Shantanu2k19/meTube"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary"
+                className="text-primary underline"
               >
-                UIdeck
+              Contributions
               </a>{" "}
-              and{" "}
-              <a
-                href="https://nextjstemplates.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary"
-              >
-                Next.js Templates
-              </a>
+              are welcomed :)
             </p>
           </div>
         </div>

@@ -3,13 +3,23 @@
     justify-content: center;
     align-items: center;
     width: 400px; /* Adjust size as needed */
-    height: 400px; /* Adjust size as needed */
     position: relative;
     overflow: hidden;
     animation: bounce 3s infinite; /* Adjust animation duration as needed */
     border: 2px solid red;
     margin-top: 20px; 
     border-radius: 20px; 
+  }
+
+  .image-container-mainimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px; /* Adjust size as needed */
+    position: relative;
+    overflow: hidden;
+    animation: bounce 3s infinite; /* Adjust animation duration as needed */
+    border: 2px solid red;
   }
   
   .image-container img {

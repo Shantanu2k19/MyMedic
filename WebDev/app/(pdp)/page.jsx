@@ -5,23 +5,14 @@ import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import Link from "next/link";
 
-import AboutSectionOne from "@/components/pdp/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/pdp/About/AboutSectionTwo";
-import Blog from "@/components/pdp/Blog";
 import Brands from "@/components/pdp/Brands";
 import ScrollUp from "@/components/pdp/Common/ScrollUp";
-import Contact from "@/components/pdp/Contact";
 import Features from "@/components/pdp/Features";
 import Hero from "@/components/pdp/Hero";
-import Pricing from "@/components/pdp/Pricing";
-import Testimonials from "@/components/pdp/Testimonials";
 import Video from "@/components/pdp/Video";
-import { Metadata } from "next";
 
 import "@/styles/index.css";
-
-// const session = await getServerSession(authOptions);
-// if (session) redirect("/home");
 
 export default function Home() {
   return (
@@ -31,13 +22,7 @@ export default function Home() {
       <Features />
       <Brands />
       <AboutSectionTwo /> {/*login section */}
-
       <Video />
-      <AboutSectionOne />
-      <Testimonials />
-      <Pricing />
-      <Blog />
-      <Contact />
     </>
   );
 }

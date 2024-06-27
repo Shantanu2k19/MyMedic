@@ -39,10 +39,11 @@ const Hero = () => {
           <div className="w-full md:w-1/2 px-4 ">
             <div className="border border-red-300 rounded-lg p-4 h-full flex flex-col items-center justify-center">
               <Image
-                src="/assets/icon2.png"
+                src="/images/mainImg/nogen5.svg"
                 alt="logout"
-                width={200}
-                height={200}
+                width={500}
+                height={500}
+                className="image-container-mainimg"
               />
             </div>
           </div>
