@@ -28,14 +28,14 @@ const Header = () => {
   });
 
   // submenu handler
-  const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index) => {
-    if (openIndex === index) {
-      setOpenIndex(-1);
-    } else {
-      setOpenIndex(index);
-    }
-  };
+  // const [openIndex, setOpenIndex] = useState(-1);
+  // const handleSubmenu = (index) => {
+  //   if (openIndex === index) {
+  //     setOpenIndex(-1);
+  //   } else {
+  //     setOpenIndex(index);
+  //   }
+  // };
 
   const usePathName = usePathname();
 
@@ -108,41 +108,39 @@ const Header = () => {
                   <ul className="block lg:flex lg:space-x-12">
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
-                        {(
-                          <ScrollLink
-                          to={menuItem.path}
+                        <ScrollLink
+                          to={menuItem.path as string}
                           spy={true}
                           smooth={true}
                           offset={-70} // Adjust this offset as needed to account for fixed headers or other elements
                           duration={500} // Duration of the scroll animation in milliseconds
-                          className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                          className={`cursor-pointer flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                             usePathName === menuItem.path
                               ? "text-primary dark:text-white"
                               : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
                           }`}
                         >
                           {menuItem.title}
-                          </ScrollLink>      
-                        )
-                        }
+                        </ScrollLink> 
                       </li>
                     ))}
                   </ul>
                 </nav>
               </div>
-              <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/signin"
-                  className="hidden px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white md:block"
+              
+              <div className="flex items-center justify-end pr-16 lg:pr-0"> 
+                <ScrollLink
+                  to="sectionSignupLogin"
+                  spy={true}
+                  smooth={true}
+                  offset={-70} // Adjust this offset as needed to account for fixed headers or other elements
+                  duration={500} // Duration of the scroll animation in milliseconds
                 >
-                  Sign In
-                </Link>
-                <Link
-                  href="/signup"
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
-                </Link>
+                  <div className="cursor-pointer ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm 
+                  bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9">
+                    Log In/Sign Up
+                  </div>
+                </ScrollLink> 
                 <div>
                   <ThemeToggler />
                 </div>

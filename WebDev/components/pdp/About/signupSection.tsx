@@ -88,8 +88,8 @@ const SignupForm : React.FC<ChildProps> = ({ toggleComponent }) => {
         </form>
         <p onClick={(toggleComponent)} className="text-center text-base font-medium text-body-color">
           Already using Startup?{" "}
-          <div className="text-primary hover:underline">
-            Sign in
+          <div className="cursor-pointer text-primary hover:underline">
+            Log in
           </div>
         </p>
       </div>

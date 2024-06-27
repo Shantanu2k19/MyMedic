@@ -43,7 +43,7 @@ const AboutSectionTwo = () => {
             </p>
           </div>
 
-          <div className="flex items-center justify-center w-full px-4 lg:w-1/2 border border-red-300 my-10">
+          <div className="flex items-center justify-center w-full px-4 lg:w-1/2 border border-red-300 my-10" id="sectionSignupLogin">
 
             {/* <div className="absolute">
                 {isSignin ? <LoginForm toggleComponent={toggleComponent}/> : <SignupForm toggleComponent={toggleComponent}/>}

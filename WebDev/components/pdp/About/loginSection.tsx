@@ -89,14 +89,14 @@ const LoginForm : React.FC<ChildProps> = ({ toggleComponent }) => {
              
               <div className="mb-6">
                 <button className="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90">
-                  Sign in
+                  Log in
                 </button>
               </div>
             </form>
 
             <p onClick={toggleComponent} className="text-center text-base font-medium text-body-color">
               Don’t you have an account?{" "}
-              <div className="text-primary hover:underline">
+              <div className="cursor-pointer text-primary hover:underline">
                 Sign up
               </div>
             </p>
