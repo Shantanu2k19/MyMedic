@@ -1,18 +1,18 @@
 "use client";
-
-import Image from "next/image";
+import React from "react";
 import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 
-const Video = () => {
+const Quote = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="We are ready to help"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Empowering Patients with Medication Knowledge"
+          paragraph="Patients are 50% more likely to take their medications punctually when they understand their purpose and benefits. 
+          Clear information builds trust and encourages adherence to treatment.Studies"
           center
           mb="80px"
         />
@@ -32,4 +32,4 @@ const Video = () => {
   );
 };
 
-export default Video;
+export default Quote;

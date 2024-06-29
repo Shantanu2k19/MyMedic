@@ -6,11 +6,11 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 import Link from "next/link";
 
 import AboutSectionTwo from "@/components/pdp/About/AboutSectionTwo";
-import Brands from "@/components/pdp/Brands";
+import Technologies from "@/components/pdp/Technologies";
 import ScrollUp from "@/components/pdp/Common/ScrollUp";
 import Features from "@/components/pdp/Features";
 import Hero from "@/components/pdp/Hero";
-import Video from "@/components/pdp/Video";
+import Quote from "@/components/pdp/Quote";
 
 import "@/styles/index.css";
 
@@ -20,9 +20,9 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <Features />
-      <Brands />
+      <Technologies />
       <AboutSectionTwo />
-      <Video />
+      <Quote />
     </>
   );
 }

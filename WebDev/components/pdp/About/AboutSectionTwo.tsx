@@ -1,10 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import { motion, AnimatePresence } from 'framer-motion';
-import SectionTitle from "../Common/SectionTitle";
 
 import LoginForm from "./loginSection"
 import SignupForm from "./signupSection"
@@ -38,8 +35,8 @@ const AboutSectionTwo = () => {
             />
             </div>
 
-            <p>
-              do you know, a patient will take medicine if he know its will affect him
+            <p className="text-[20px]">
+              "An educated patient is the best prescription."
             </p>
           </div>
 
