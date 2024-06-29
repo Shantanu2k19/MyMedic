@@ -11,7 +11,7 @@ function Topbar () {
   return (
     <nav className="topbar">
         <Link href='/' className="flex item-center gap-4">
-            <Image src="/assets/icon2.png" alt="logo" width={40} height={20} />
+            <Image src="/assets/icon.png" alt="logo" width={40} height={20} />
             <p className="text-heading3-bold text-light-1 max-xs:hidden ">
                 MyMedic
             </p>
