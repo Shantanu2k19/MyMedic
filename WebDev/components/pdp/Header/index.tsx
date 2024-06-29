@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
@@ -27,16 +27,6 @@ const Header = () => {
     window.addEventListener("scroll", handleStickyNavbar);
   });
 
-  // submenu handler
-  // const [openIndex, setOpenIndex] = useState(-1);
-  // const handleSubmenu = (index) => {
-  //   if (openIndex === index) {
-  //     setOpenIndex(-1);
-  //   } else {
-  //     setOpenIndex(index);
-  //   }
-  // };
-
   const usePathName = usePathname();
 
   return (
@@ -58,14 +48,14 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="/images/logo/logo-2.svg"
+                  src="/assets/logo.svg"
                   alt="logo"
                   width={140}
                   height={30}
                   className="w-full dark:hidden"
                 />
                 <Image
-                  src="/images/logo/logo.svg"
+                  src="/assets/logodark.svg"
                   alt="logo"
                   width={140}
                   height={30}

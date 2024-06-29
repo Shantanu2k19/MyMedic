@@ -30,10 +30,10 @@ const AboutSectionTwo = () => {
               data-wow-delay=".15s"
             >
             <Image
-              src="/images/mainImg/grn3.jpg"
+              src="/images/mainImg/medicSearch.jpg"
               alt="about image"
-              width={100}
-              height={100}
+              width={1080}
+              height={1080}
               className="image-container"
             />
             </div>

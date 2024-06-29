@@ -43,7 +43,7 @@ const Hero = () => {
                 alt="logout"
                 width={500}
                 height={500}
-                className="image-container-mainimg"
+                className="image-container"
               />
             </div>
           </div>

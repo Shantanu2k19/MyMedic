@@ -66,8 +66,10 @@ const LoginForm : React.FC<ChildProps> = ({ toggleComponent }) => {
                   Your Email
                 </label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
+                  autoComplete="email" 
                   placeholder="Enter your Email"
                   className="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
                 />
@@ -80,6 +82,7 @@ const LoginForm : React.FC<ChildProps> = ({ toggleComponent }) => {
                   Your Password
                 </label>
                 <input
+                  id="password"
                   type="password"
                   name="password"
                   placeholder="Enter your Password"
@@ -94,12 +97,12 @@ const LoginForm : React.FC<ChildProps> = ({ toggleComponent }) => {
               </div>
             </form>
 
-            <p onClick={toggleComponent} className="text-center text-base font-medium text-body-color">
+            <div onClick={toggleComponent} className="text-center text-base font-medium text-body-color">
               Don’t you have an account?{" "}
               <div className="cursor-pointer text-primary hover:underline">
                 Sign up
               </div>
-            </p>
+            </div>
           </div>
     )
 }

@@ -43,7 +43,7 @@ const SingleBrand = ({ brand }: { brand: Brand }) => {
           src={image} 
           alt={name} 
           fill 
-          className="dark:bg-white dark:opacity-40 rounded-lg p-2" 
+          className="dark:bg-white rounded-lg p-2" 
           style={{ filter: 'grayscale(10%)' }}
         />
       </a>
