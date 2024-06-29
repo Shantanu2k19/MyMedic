@@ -25,6 +25,48 @@ module.exports = {
       },
     },
     fontSize: {
+      "pdp-heading1-main": [
+        "45px",
+        {
+          lineHeight: "140%",
+          fontWeight: "700",
+        },
+      ],
+      "pdp-heading1-sm": [
+        "35px",
+        {
+          lineHeight: "140%",
+          fontWeight: "700",
+        },
+      ],
+      "pdp-heading2-main": [
+        "25px",
+        {
+          lineHeight: "140%",
+          fontWeight: "450",
+        },
+      ],
+      "pdp-heading2-sm": [
+        "20px",
+        {
+          lineHeight: "140%",
+          fontWeight: "450",
+        },
+      ],
+      "pdp-desc-main": [
+        "20px",
+        {
+          lineHeight: "140%",
+          fontWeight: "450",
+        },
+      ],
+      "pdp-desc-sm": [
+        "17px",
+        {
+          lineHeight: "140%",
+          fontWeight: "450",
+        },
+      ],
       "heading1-bold": [
         "36px",
         {

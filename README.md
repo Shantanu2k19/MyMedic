@@ -39,3 +39,56 @@ tasks :
  
 
  - rename pdp folders and files accordingly 
+ - notification handling for mobile
+
+
+
+toatst usage 
+
+import { useTheme } from "next-themes";
+import { toast } from 'react-toastify';
+
+ function showAlert(mssg: string, mode:number) {
+    console.log(theme)
+
+    if (mode == 1) {
+      toast.success(mssg, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: theme
+      });
+    } else if (mode == 2) {
+      toast.info(mssg, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: theme,
+      });
+    } else {
+      toast.error(mssg, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: theme,
+      });
+    }
+  }
+
+  onClick={() => showAlert("Connecting to server...", 2)}
+
+  use contained as well 
+
+  when in mobile mode, provide login signup on top 

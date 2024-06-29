@@ -31,3 +31,9 @@
     @apply opacity-100;
   }
 }
+
+.custom-toast-container{
+  width: auto;
+  max-width: 400px;
+  margin: 0 auto;
+}

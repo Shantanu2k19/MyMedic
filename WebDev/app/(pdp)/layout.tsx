@@ -4,7 +4,9 @@ import Footer from "@/components/pdp/Footer";
 import Header from "@/components/pdp/Header";
 import ScrollToTop from "@/components/pdp/ScrollToTop";
 import { Inter } from "next/font/google";
-// import "node_modules/react-modal-video/css/modal-video.css";
+
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
 
 import { Providers } from "./providers"
 
@@ -26,6 +28,14 @@ export default function RootLayout({
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
           <Header />
+          <ToastContainer
+            position="top-center"
+            pauseOnFocusLoss={false}
+            pauseOnHover={false}
+            limit={3}
+            theme="dark"
+            // className="custom-toast-container"
+          />
           {children}
           <Footer />
           <ScrollToTop />

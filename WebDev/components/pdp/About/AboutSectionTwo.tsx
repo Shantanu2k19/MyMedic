@@ -19,11 +19,11 @@ const AboutSectionTwo = () => {
 
   return (
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
-      <div className="border border-red-300 container max-w:200">
+      <div className="container max-w:200">
 
       <div className="flex flex-wrap items-center justify-center">
 
-          <div className="w-full px-4 lg:w-1/2 border border-green-300">
+          <div className="flex flex-wrap items-center justify-center w-full px-4 lg:w-1/2">
             <div
               className="relative mx-auto mb-12 aspect-[25/24] 
               max-w-[500px] text-center lg:m-0 flex items-center justify-center"
@@ -43,7 +43,7 @@ const AboutSectionTwo = () => {
             </p>
           </div>
 
-          <div className="flex items-center justify-center w-full px-4 lg:w-1/2 border border-red-300 my-10" id="sectionSignupLogin">
+          <div className="flex items-center justify-center w-full px-4 lg:w-1/2 my-10" id="sectionSignupLogin">
 
             {/* <div className="absolute">
                 {isSignin ? <LoginForm toggleComponent={toggleComponent}/> : <SignupForm toggleComponent={toggleComponent}/>}

@@ -6,7 +6,7 @@
     position: relative;
     overflow: hidden;
     animation: bounce 3s infinite; /* Adjust animation duration as needed */
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-top: 20px; 
     border-radius: 20px; 
   }
