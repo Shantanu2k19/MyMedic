@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-export default function hello(){
+const Hello = () => {
     const { data: session } = useSession();
     // console.log("user name")
     // console.log(session?.user?.name)
@@ -90,3 +90,5 @@ export default function hello(){
         </>
     )
 }
+
+export default Hello;

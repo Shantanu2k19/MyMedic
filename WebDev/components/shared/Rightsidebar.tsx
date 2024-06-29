@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function Rightsidebar() {
   const { data: session } = useSession();
   const router = useRouter();

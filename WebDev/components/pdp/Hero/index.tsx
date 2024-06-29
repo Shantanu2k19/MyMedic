@@ -24,7 +24,7 @@ const Hero = () => {
 
 
               <p className="mb-12 leading-relaxed text-body-color dark:text-body-color-dark text-pdp-desc-sm sm:text-pdp-desc-main">
-                Easily upload your doctor&apos;'s prescription, explore prescribed medicines, understand their uses and dosages, and learn how they benefit you.
+                Easily upload your doctor&apos;s prescription, explore prescribed medicines, understand their uses and dosages, and learn how they benefit you.
                 <br/>Simplifying healthcare, one prescription at a time.
               </p>
               <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">

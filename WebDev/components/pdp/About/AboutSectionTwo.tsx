@@ -36,7 +36,7 @@ const AboutSectionTwo = () => {
             </div>
 
             <p className="text-[20px]">
-            &quot;"An educated patient is the best prescription.&quot;"
+            &quot;An educated patient is the best prescription.&quot;
             </p>
           </div>
 

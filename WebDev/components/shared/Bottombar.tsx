@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/indent */
 'use client'
 import React, { useMemo } from 'react'
 
