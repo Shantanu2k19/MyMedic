@@ -18,10 +18,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
     }
   },
   // "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx",".next/types/**/*.ts", "app/(pdp)/layout.js", "app/(pdp)/page.jsx"],
-  "include": ["next-env.d.ts", "**/*.ts",".next/types/**/*.ts", "app/(pdp)/layout.js", "app/(pdp)/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts",".next/types/**/*.ts", "app/(pdp)/layout.js", "app/(pdp)/page.jsx", "types/*"],
   "exclude": ["node_modules"]
 }

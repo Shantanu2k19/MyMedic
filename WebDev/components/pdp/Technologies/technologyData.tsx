@@ -1,6 +1,6 @@
-import { Brand } from "@/types/brand";
+import { Tech } from "@/types/Tech"
 
-const brandsData: Brand[] = [
+const Technologies: Tech[] = [
   {
     id: 6,
     name: "Google Bard",
@@ -38,4 +38,4 @@ const brandsData: Brand[] = [
   },
 ];
 
-export default brandsData;
+export default Technologies;
