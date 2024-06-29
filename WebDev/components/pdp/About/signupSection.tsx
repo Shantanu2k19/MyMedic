@@ -54,6 +54,7 @@ const SignupForm : React.FC<ChildProps> = ({ toggleComponent }) => {
           </p>
           <span className="hidden h-[1px] w-full max-w-[60px] bg-body-color/50 sm:block"></span>
         </div>
+
         <form>
           <div className="mb-8">
             <input
@@ -86,12 +87,14 @@ const SignupForm : React.FC<ChildProps> = ({ toggleComponent }) => {
             </button>
           </div>
         </form>
-        <p onClick={(toggleComponent)} className="text-center text-base font-medium text-body-color">
+
+        <div onClick={(toggleComponent)} className="text-center text-base font-medium text-body-color">
           Already using Startup?{" "}
           <div className="cursor-pointer text-primary hover:underline">
             Log in
           </div>
-        </p>
+        </div>
+
       </div>
     )
 }

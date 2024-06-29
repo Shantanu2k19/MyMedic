@@ -3,20 +3,19 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-
 import LeftSidebar from '@/components/shared/Lefisidebar'
 import Rightsidebar from '@/components/shared/Rightsidebar'
 import Topbar from '@/components/shared/Topbar'
 import Bottombar from '@/components/shared/Bottombar'
 import { AuthProvider } from "../_app";
-
+import Head from 'next/head';
 import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Threads',
-  description: 'A next js 13 threads clone for learning mern'
+  title: 'MyMedic',
+  description: 'An application to facilitate medication knowledge and awareness'
 }
 
 export default function RootLayout ({
@@ -26,6 +25,9 @@ export default function RootLayout ({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={inter.className}>
       <AuthProvider>
         <Topbar />
@@ -38,7 +40,7 @@ export default function RootLayout ({
               </div>
             </section>
 
-            <Rightsidebar />
+            {/* <Rightsidebar /> */}
           </main>
         <Bottombar />
         </AuthProvider>

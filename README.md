@@ -37,3 +37,5 @@ tasks :
 
  - compress the jpg and remove unnecessary images
  
+
+ - rename pdp folders and files accordingly 

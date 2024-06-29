@@ -3,7 +3,7 @@ export default function hello(){
 
     return (
         <>
-        SETTINGS PAGE
+        explore PAGE
         </>
     )
 }
