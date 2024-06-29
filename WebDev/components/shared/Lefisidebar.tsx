@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 
-import { sidebarLinks } from '@/constants'
+import { sidebarLinks } from '@/types/sidebarLinks'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'

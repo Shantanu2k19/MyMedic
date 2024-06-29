@@ -2,7 +2,7 @@
 'use client'
 import React, { useMemo } from 'react'
 
-import { sidebarLinks } from '@/constants'
+import { sidebarLinks } from '@/types/sidebarLinks'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
