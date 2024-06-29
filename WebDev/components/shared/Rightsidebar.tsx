@@ -23,7 +23,7 @@ function Rightsidebar() {
       </div>
       <div className="flex flex-1 flex-col justify-start">
         <h3 className="text-heading4-medium text-light-1">
-          User's mail :{session?.user?.email}
+          User&apos;s mail :{session?.user?.email}
         </h3>
       </div>
     </section>
