@@ -13,9 +13,11 @@ export const authOptions = {
     }),
     CredentialsProvider({
       name: "credentials",
-      credentials: {},
-
-      async authorize(credentials) {
+      credentials: {
+        email: { label: "email", type: "email" },
+        password: { label: "password", type: "password" },
+      },
+      async authorize(credentials, req) {
         const { email, password } = credentials;
         console.log("LOGIN backend");
         try {
@@ -38,7 +40,7 @@ export const authOptions = {
           console.log("error getting creds" + error);
         }
 
-        return;
+        return null;
       },
     }),
   ],
@@ -47,8 +49,7 @@ export const authOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    //using homepage for login
-    signIn: "/",
+    signIn: "/", // Using homepage for login
   },
 };
 

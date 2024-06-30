@@ -1,11 +1,55 @@
 import React from "react";
-import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface ChildProps {
     toggleComponent: () => void;
   }
 
 const LoginForm : React.FC<ChildProps> = ({ toggleComponent }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+
+
+    try {
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (!res) {
+        console.log("Sign in failed");
+        setError("Sign in failed");
+        return;
+      }
+
+      if (res.error) {
+        console.log("Invalid creds")
+        setError("Invalid creds");
+        return;
+      }
+      console.log("success signin");
+      //router.replace("/home");
+    } catch (error) {
+      console.log("error loging in :" + error);
+    }
+  };
+  
+  const inputChangeHandler = (e:any, setItem:any) => {
+    error && setError("");
+    setItem(e.target.value);
+  };
+
     return (
         <div className="flex flex-col justify-center h-screen border border-red-300 shadow-three mx-auto min-w-[400px] max-w-[550px] min-h-[640px] max-h-[650px] rounded bg-white px-6 py-10 dark:bg-dark sm:p-[30px]">
         <h4 className="mb-3 text-center text-2xl font-bold text-black pb-2 dark:text-white sm:text-3xl">
@@ -57,7 +101,7 @@ const LoginForm : React.FC<ChildProps> = ({ toggleComponent }) => {
               <span className="hidden h-[1px] w-full max-w-[70px] bg-body-color/50 sm:block"></span>
             </div>
 
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-8">
                 <label
                   htmlFor="email"
@@ -72,6 +116,8 @@ const LoginForm : React.FC<ChildProps> = ({ toggleComponent }) => {
                   autoComplete="email" 
                   placeholder="Enter your Email"
                   className="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
+                  onChange={(e) => inputChangeHandler(e, setEmail)}
+                  onFocus={() => setError("")}
                 />
               </div>
               <div className="mb-8">
@@ -87,18 +133,37 @@ const LoginForm : React.FC<ChildProps> = ({ toggleComponent }) => {
                   name="password"
                   placeholder="Enter your Password"
                   className="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
+                  onChange={(e) => inputChangeHandler(e, setPassword)}
+                  onFocus={() => setError("")}
                 />
               </div>
              
               <div className="mb-6">
-                <button className="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90">
-                  Log in
+                <button 
+                  className={`shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm 
+                  bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90"
+                  ${
+                    !password || !email
+                      ? "opacity-50 cursor-not-allowed px-6 py-2 rounded-md"
+                      : ""
+                  }`}
+                  disabled={!password || !email}
+                >
+                  Login
                 </button>
+                {error && (
+                  <div
+                    className="bg-red-500 text-white w-fit text-sm
+                      px-3 py-1 rounded-md mt-2"
+                  >
+                    {error}
+                  </div>
+                )}
               </div>
             </form>
 
             <div onClick={toggleComponent} className="text-center text-base font-medium text-body-color">
-              Don’t you have an account?{" "}
+              Don&apos;t have an account?{" "}
               <div className="cursor-pointer text-primary hover:underline">
                 Sign up
               </div>

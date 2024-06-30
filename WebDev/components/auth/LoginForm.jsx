@@ -58,11 +58,7 @@ export default function LoginForm() {
             disabled={!password || !email}
             className={`bg-blue-700 text-white 
             font-bold cursor-pointer px-6 py-2 rounded-md"
-            ${
-              !password || !email
-                ? "opacity-50 cursor-not-allowed px-6 py-2 rounded-md"
-                : ""
-            }`}
+            `}
           >
             Login
           </button>

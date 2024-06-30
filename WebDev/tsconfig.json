@@ -22,6 +22,6 @@
     }
   },
   // "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx",".next/types/**/*.ts", "app/(pdp)/layout.js", "app/(pdp)/page.jsx"],
-  "include": ["next-env.d.ts", "**/*.ts",".next/types/**/*.ts", "app/(pdp)/layout.js", "app/(pdp)/page.jsx", "types/*"],
+  "include": ["next-env.d.ts", "**/*.ts",".next/types/**/*.ts", "app/(pdp)/layout.js", "app/(pdp)/page.jsx", "types/*", "app/(home)/*", "app/api/**/*.js", "app/api/**/*.ts"],
   "exclude": ["node_modules"]
 }
