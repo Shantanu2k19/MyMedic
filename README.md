@@ -1,6 +1,17 @@
 basic application
 
-- landing page pdp(pending page)
+- login system complete
+- mobile view in home not proper
+- home screen adding photo section map
+- settings page basic and styling
+- zod validation implementation, using interface for data
+- login signup as modal on pdp
+
+--------
+
+
+Review pending 
+- landing page pdp
   1.  pdp page
   2.  Authentication (login, login with google/fb/phonenumber/mail, session manager)
   3.  Ui development after login
@@ -20,27 +31,9 @@ basic application
   6.  Video call, audio call, chatting functionality
   7.  Admin page
 
-commands:
-npm install tailwindcss-animate
-
-tasks :
-
-- logout not working - DONE
-- input API integration - ritik
-- Links restructuring -ritik
-- fail message on register/login fail
-- not redirecting after registering account - on hold
-- email and password check before register, zod validation
-- server side and client side user authentication
-- Homepage UI
 
 
- - compress the jpg and remove unnecessary images
- 
-
- - rename pdp folders and files accordingly 
- - notification handling for mobile
-
+-----------
 
 
 toatst usage 
@@ -90,5 +83,3 @@ import { toast } from 'react-toastify';
   onClick={() => showAlert("Connecting to server...", 2)}
 
   use contained as well 
-
-  when in mobile mode, provide login signup on top 
