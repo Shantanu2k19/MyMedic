@@ -6,6 +6,7 @@ basic application
 - settings page basic and styling
 - zod validation implementation, using interface for data
 - login signup as modal on pdp
+- store csrf token/its hash somewhere on local browser, no continuous calling of api 
 
 --------
 
