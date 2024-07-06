@@ -13,7 +13,7 @@ export async function POST(req) {
         const hashedPass = await bcrypt.hash(password, 10)
         console.log("creating user")
         try {
-            await User.create({ name, email, password: hashedPass })
+            await User.create({ name, email, password: hashedPass, isgooglelogin:false })
         }
         catch (error) {
             console.log("error:" + error)

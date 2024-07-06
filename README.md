@@ -85,3 +85,6 @@ import { toast } from 'react-toastify';
   onClick={() => showAlert("Connecting to server...", 2)}
 
   use contained as well 
+  
+  when in mobile mode, provide login signup on top 
+  kill -9 $(lsof -i:3000 -t)
