@@ -8,7 +8,7 @@ import SignupForm from "./signupSection"
 import "@/styles/bounce.css";
 
 const AboutSectionTwo = () => {
-  const [isSignin, toggleSignin] = useState(false);
+  const [isSignin, toggleSignin] = useState(true);
 
   const toggleComponent = () => {
     toggleSignin(!isSignin);

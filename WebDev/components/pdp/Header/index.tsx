@@ -8,8 +8,14 @@ import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { signOut } from "next-auth/react"
 
 const Header = () => {
+
+  const HandleLogout = () => {
+    console.log('logging out');
+    signOut({ callbackUrl: '/' });
+  } 
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {

@@ -7,6 +7,8 @@ module.exports = {
     "./pages/**/*.{ts,tsx,js,jsx}",
     "./components/**/*.{ts,tsx,js,jsx,mdx}",
     "./app/**/*.{ts,tsx,js,jsx}",
+    "./app/api/auth/error/*.tsx",
+    './app/**/*.{js,ts,jsx,tsx}',
     // "./src/**/*.{ts,tsx,js,jsx}",
     // "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     // "./src/app/**/*.{js,ts,jsx,tsx,mdx}",

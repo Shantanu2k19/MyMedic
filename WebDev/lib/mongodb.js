@@ -3,16 +3,21 @@ import mongoose from "mongoose"
 let isConnected = false
 
 export const connectMongodb = async () => {
-  if (process.env.MONGO_SECRET == null) { console.log('MONGO_SECRET not found'); return }
+  if (process.env.MONGO_SECRET == null) 
+  { 
+    throw new Error("Mongo DB secret not found");
+  }
 
-  if (isConnected) { console.log('Already connected to MongoDB') }
+  if (isConnected){ 
+    console.log('Already connected to MongoDB'); 
+    return; 
+  }
 
   console.log(`connecting to mongo db...`)
   try {
     await mongoose.connect(process.env.MONGO_SECRET)
-    isConnected = true
-    console.log('connected to mongo db')
+    isConnected = true;
   } catch (error) {
-    console.log(`Error connecting to mongo db ${error.message}`)
+    throw new Error(`Error connecting to mongo db : ${error.message}`);
   }
 }
