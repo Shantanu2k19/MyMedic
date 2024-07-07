@@ -17,16 +17,16 @@ function LeftSidebar () {
   const router = useRouter()
   const pathname = usePathname()
 
-  useEffect(() => {
-    if (status === 'unauthenticated') {
-      console.log("redirecting to home")
-      router.push('/');
-    }
-  }, [status, router]);
+  // useEffect(() => {
+  //   if (status === 'unauthenticated') {
+  //     console.log("redirecting to home")
+  //     router.push('/');
+  //   }
+  // }, [status, router]);
   
-  if (status === 'loading') {
-    console.log("loading...")
-  }
+  // if (status === 'loading') {
+  //   console.log("loading...")
+  // }
 
   const HandleLogout = () => {
     console.log('logging out');
