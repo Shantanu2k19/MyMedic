@@ -8,7 +8,7 @@ basic application
 - login signup as modal on pdp
 - store csrf token/its hash somewhere on local browser, no continuous calling of api
 - first page in home mobile view fix 
-
+- image tap to enlarge 
 --------
 
 
